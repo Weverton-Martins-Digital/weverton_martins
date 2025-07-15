@@ -1,0 +1,64 @@
+body {
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
+}
+
+
+.screen {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+
+.screen .screen-fields {
+    padding: 20px;
+}
+
+
+.screen .screen-fields .screen-content {
+    border: solid 2px black;
+    flex-direction: row wrap;
+    border-radius: 50px;
+    overflow: hidden;
+    display: flex;
+}
+
+
+.screen .screen-fields .screen-content .navigation-bar {
+    background-color: #05ffe6;
+    min-height: 100vh;
+    max-width: 150px;
+}
+
+
+.screen .screen-fields .screen-content .navigation-bar .navegation-perfil {
+    text-align: center;
+    padding: 20px;
+}
+
+
+.screen .screen-fields .screen-content .navigation-bar .navegation-perfil img {
+    border-radius: 50px;
+    height: auto;
+    width: 100%;
+}
+
+
+.screen .screen-fields .screen-content .navigation-bar .navegation-functions {
+    flex-direction: column;
+}
+
+
+.screen .screen-fields .screen-content .navigation-bar .navegation-functions .navegation-buttons {
+    flex-direction: column;
+    display: flex;
+}
+
+
+.screen .screen-fields .screen-content .navigation-bar .navegation-functions .navegation-buttons button {
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+}
