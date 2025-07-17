@@ -26,20 +26,19 @@ public class Main {
                         System.out.println("\nCalculadora a caminho! Preparando os números...");
                         calculadora(entrada); // Caminhar para a calculadora
                         break;
+                        
                     case 2:
                         System.out.println("\nAbrindo o Guia de Suporte... Sua jornada começa agora!");
                         guia(entrada);
                         break;
+
                     case 3:
                         System.out.println("\nAté a próxima! Foi um prazer te ajudar. Volte sempre!");
                         return; // Sai do programa
+
                     default:
                         System.out.println("\nOpção inválida! Por favor, digite um número entre 1 e 3.");
                         entrada.next(); // Limpa o buffer de entrada
-                }
-
-                if (userDecision >= 1 && userDecision <= 3) {
-                    break;
                 }
 
             } catch (InputMismatchException e) {
@@ -50,11 +49,74 @@ public class Main {
     }
 
     public static void calculadora(Scanner entrada) {
-        System.out.println("\nBem-vindo(a) á nossa cálculadora");
+        System.out.println("\n--- Bem-vindo(a) á nossa cálculadora ---");
+
+        // Declaração de variável
+        double number1 = 0, number2 = 0;
+
+        // Verificação de prosseguir
+        int calcuDecision = 0;
+
+        while (true) {
+            // Receber os dados de entrada do usuário
+            System.out.print("\nDigite o primeiro número: ");
+            number1 = entrada.nextDouble();
+
+            System.out.print("Digite o segundo número: ");
+            number2 = entrada.nextDouble();
+
+            // Imprimir as opções que o usuário pode escolher
+            System.out.println("\n--- O que você gostaria de saber? ---");
+            System.out.println("[1] Adição");
+            System.out.println("[2] Subtração");
+            System.out.println("[3] Multiplicação");
+            System.out.println("[4] Divisão");
+            System.out.println("[5] Sair da Cálculadora");
+            System.out.print("Sua escolha: ");
+
+            try {
+                calcuDecision = entrada.nextInt();
+                double resultado;
+
+                switch (calcuDecision) {
+                    case 1:
+                        resultado = number1 + number2;
+                        System.out.println("O Resultado é: " + resultado);
+                        break;
+
+                    case 2:
+                        resultado = number1 - number2;
+                        System.out.println("O Resultado é: " + resultado);
+                        break;
+
+                    case 3:
+                        resultado = number1 * number2;
+                        System.out.println("O Resultado é: " + resultado);
+                        break;
+
+                    case 4:
+                        resultado = number1 / number2;
+                        System.out.println("O Resultado é: " + resultado);
+                        break;
+
+                    case 5:
+                        System.out.println("Até a próxima! Foi um prazer te ajudar. Volte sempre!");    
+                        return;
+
+                    default:
+                        System.out.println("\nOpção inválida! Por favor, digite um número entre 1 e 3.");
+                        entrada.next(); // Limpa o buffer de entrada
+                }
+
+            } catch (InputMismatchException e) {
+                System.out.println("\nEntrada inválida! Por favor, digite apenas números inteiros.");
+                entrada.next(); // Limpa o buffer de entrada para evitar loop infinito
+            }
+        }
     }
 
     public static void guia(Scanner entrada) {
-        System.out.println("\nBem-vindo(a) ao nosso Guia de Suporte!");
+        System.out.println("\n--- Bem-vindo(a) ao nosso Guia de Suporte! ---");
 
         int guiaDecition;
 
@@ -75,19 +137,24 @@ public class Main {
                     case 1:
                         System.out.println("\nEstamos sempre trabalhando para melhorar! Novas atualizações em breve...");
                         break;
+
                     case 2:
                         System.out.println("\nNossa equipe é formada por: Gestor Weverton e muitos outros talentos!");
                         break;
+
                     case 3:
                         System.out.println("\nSomos uma equipe iniciante e apaixonada por tecnologia, buscando sempre inovar!");
                         break;
+                        
                     case 4:
                         System.out.println("\nRetornando à Calculadora... Vamos aos cálculos!");
                         calculadora(entrada); // Retorna para a calculadora
-                        return; // Retorna ao menu principal (para a calculadora, neste caso)
+                        return; // Retorna ao menu principal
+
                     case 5:
                         System.out.println("\nObrigado por utilizar nosso guia! Volte sempre!");
                         System.exit(0); // Fecha o sistema por completo
+
                     default:
                         System.out.println("\nOpção inválida! Por favor, digite um número entre 1 e 5.");
                         entrada.next(); // Limpa o buffer de entrada
