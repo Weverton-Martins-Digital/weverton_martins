@@ -13,21 +13,26 @@ body {
 
 
 .screen .screen-fields {
-    padding: 20px;
+    background-color: #b6b6b6;
+    max-height: 100vh;
+    padding: 10px;
 }
 
 
 .screen .screen-fields .screen-content {
+    background-color: #ffffff;
     border: solid 2px black;
     flex-direction: row wrap;
     border-radius: 50px;
+    max-height: 100vh;
     overflow: hidden;
     display: flex;
 }
 
 
 .screen .screen-fields .screen-content .navigation-bar {
-    background-color: #05ffe6;
+    border-right: solid 2px #000;
+    background-color: #ffffff;
     min-height: 100vh;
     max-width: 150px;
 }
@@ -53,12 +58,53 @@ body {
 
 .screen .screen-fields .screen-content .navigation-bar .navegation-functions .navegation-buttons {
     flex-direction: column;
+    align-items: center;
     display: flex;
 }
 
 
 .screen .screen-fields .screen-content .navigation-bar .navegation-functions .navegation-buttons button {
+    background-color: transparent;
+    border-color: transparent;
     border-radius: 10px;
+    transition: 0.5s;
+    max-width: 100px;
     padding: 10px;
+    margin: 10px;
+    width: 100%;
+}
+.screen .screen-fields .screen-content .navigation-bar .navegation-functions .navegation-buttons button:hover {
+    background-color: rgb(255, 255, 255);
+}
+
+
+.screen .screen-fields .screen-content .contents {
+    flex-direction: column;
+    padding: 10px;
+}
+
+
+.screen .screen-fields .screen-content .contents .contents-main {
+    flex-wrap: wrap;
+    display: block;
+}
+
+
+.screen .screen-fields .screen-content .contents .contents-main .nav-contents {
+    justify-content: space-between;
+    align-items: center;
+    min-width: 100vh;
+    display: flex;
+}
+
+
+.screen .screen-fields .screen-content .contents .contents-main .nav-contents ul {
+    list-style: none;
+    display: flex;
+}
+
+
+.screen .screen-fields .screen-content .contents .contents-main .nav-contents ul li a{
+    text-decoration: none;
     margin: 10px;
 }
